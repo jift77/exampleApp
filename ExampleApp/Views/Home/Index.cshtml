@@ -17,6 +17,16 @@
                     }
                 })
             };
+
+            deleteProduct = function (data) {
+                $.ajax("/api/products/" + data.ProductID, {
+                    type: "DELETE",
+                    success: function () {
+                        products.remove(data);
+                    }
+                })
+            };
+
             ko.applyBindings();
         });
     </script>
@@ -32,6 +42,12 @@
                 <td data-bind="text: ProductID"></td>
                 <td data-bind="text: Name"></td>
                 <td data-bind="text: Price"></td>
+                <td>
+                    <button class="deleteBtn btn btn-danger btn-xs"
+                            data-bind="click: deleteProduct">
+                        Delete
+                    </button>
+                </td>
             </tr>
         </tbody>
     </table>

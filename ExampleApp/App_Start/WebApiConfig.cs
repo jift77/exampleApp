@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Formatting;
 using System.Web.Http;
 
 namespace ExampleApp
@@ -22,6 +23,8 @@ namespace ExampleApp
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            //config.Services.Replace(typeof(IContentNegotiator), new CustomNegotiator());
         }
     }
 }

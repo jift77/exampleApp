@@ -1,30 +1,26 @@
 ﻿using ExampleApp.Models;
 using Ninject;
 using Ninject.Extensions.ChildKernel;
+using Ninject.Web.Common;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using System.Net.Http.Formatting;
 using System.Web.Http.Dependencies;
 
 namespace ExampleApp.Infraestructure
 {
-    public class NinjectResolver : IDependencyResolver
+    public class NinjectResolver : IDependencyResolver, System.Web.Mvc.IDependencyResolver
     {
         private IKernel kernel;
 
         public NinjectResolver() : this (new StandardKernel()) { }
 
-        public NinjectResolver(IKernel ninjectKernel, bool scope = false) {
+        public NinjectResolver(IKernel ninjectKernel) {
             kernel = ninjectKernel;
-            if (!scope)
-                AddBindings(kernel);
+            AddBindings(kernel);
         }
 
-        public IDependencyScope BeginScope()
-        {
-            return new NinjectResolver(AddRequestBindings(new ChildKernel(kernel)), true);
-        }
+        public IDependencyScope BeginScope() => this;
 
         public void Dispose()
         {
@@ -42,12 +38,8 @@ namespace ExampleApp.Infraestructure
         }
 
         private void AddBindings(IKernel kernel) {
-
-        }
-
-        private IKernel AddRequestBindings(IKernel kernel) {
             kernel.Bind<IRepository>().To<Repository>().InSingletonScope();
-            return kernel;
+            kernel.Bind<IContentNegotiator>().To<CustomNegotiator>();
         }
     }
 }

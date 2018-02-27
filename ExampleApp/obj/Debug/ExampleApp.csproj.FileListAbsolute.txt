@@ -37,3 +37,12 @@ C:\Users\georg\source\repos\ExampleApp\ExampleApp\obj\Debug\ExampleApp.csprojRes
 C:\Users\georg\source\repos\ExampleApp\ExampleApp\obj\Debug\ExampleApp.csproj.CoreCompileInputs.cache
 C:\Users\georg\source\repos\ExampleApp\ExampleApp\obj\Debug\ExampleApp.dll
 C:\Users\georg\source\repos\ExampleApp\ExampleApp\obj\Debug\ExampleApp.pdb
+C:\Users\georg\source\repos\exampleApp\ExampleApp\bin\Ninject.dll
+C:\Users\georg\source\repos\exampleApp\ExampleApp\bin\Ninject.Extensions.ChildKernel.dll
+C:\Users\georg\source\repos\exampleApp\ExampleApp\bin\Ninject.Web.Common.dll
+C:\Users\georg\source\repos\exampleApp\ExampleApp\bin\Ninject.Web.Mvc.dll
+C:\Users\georg\source\repos\exampleApp\ExampleApp\bin\WebActivatorEx.dll
+C:\Users\georg\source\repos\exampleApp\ExampleApp\bin\Ninject.xml
+C:\Users\georg\source\repos\exampleApp\ExampleApp\bin\Ninject.Extensions.ChildKernel.xml
+C:\Users\georg\source\repos\exampleApp\ExampleApp\bin\Ninject.Web.Common.xml
+C:\Users\georg\source\repos\exampleApp\ExampleApp\bin\Ninject.Web.Mvc.xml
