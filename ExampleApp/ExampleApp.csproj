@@ -196,6 +196,8 @@
     <Compile Include="Infraestructure\CustomNegotiator.cs" />
     <Compile Include="Infraestructure\NinjectResolver.cs" />
     <Compile Include="Infraestructure\NoContentResult.cs" />
+    <Compile Include="Infraestructure\ProductFormatter.cs" />
+    <Compile Include="Infraestructure\ProductMediaMapping.cs" />
     <Compile Include="Models\IRepository.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Repository.cs" />
