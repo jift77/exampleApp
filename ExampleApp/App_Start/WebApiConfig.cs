@@ -54,7 +54,7 @@ namespace ExampleApp
             //prodFormatter.AddUriPathExtensionMapping("custom", "application/x.product");
             //config.Formatters.Add(prodFormatter);
 
-            config.ParameterBindingRules.Insert(0, typeof(Numbers), x => x.BindWithAttribute(new FromUriAttribute()));
+            //config.ParameterBindingRules.Insert(0, typeof(Numbers), x => x.BindWithAttribute(new FromUriAttribute()));
         }
     }
 }
