@@ -20,5 +20,15 @@ namespace ExampleApp.Controllers
         {
             return View(repo.Products);
         }
+
+        public ActionResult Formats()
+        {
+            return View();
+        }
+
+        public ActionResult Bindings()
+        {
+            return View();
+        }
     }
 }

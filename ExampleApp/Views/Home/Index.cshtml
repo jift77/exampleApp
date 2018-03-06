@@ -5,14 +5,16 @@
 @section Scripts {
     <script>
         var products = ko.observableArray(@Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model)));
+        var errors = ko.observableArray();
 
         $(document).ready(function () {
+            errors.removeAll();
             getProducts = function () {
                 $.ajax("/api/products", {
                     headers: { "X-UseProductFormat": "true" },
-                    dataType: "text",
+                    //dataType: "text",
                     accepts: {
-                        text: "application/x.product"
+                        "*": "application/x.product"
                     },
                     success: function (data) {
                         products.removeAll();
@@ -23,6 +25,13 @@
                                 Name: arr[i + 1],
                                 Price: arr[i + 2]
                             });
+                        }
+                    },
+                    error: function (jqXHR) {
+                        switch (jqXHR.status) {
+                            case 406:
+                                errors.push("Request are not accepted by the server");
+                                break;
                         }
                     }
                 })
@@ -41,6 +50,13 @@
         });
     </script>
 }
+
+<div class="alert alert-danger" data-bind="visible: errors().length">
+    <p><strong>Something has gone wrong:</strong></p>
+    <ul data-bind="foreach: errors">
+        <li data-bind="text: $data"></li>
+    </ul>
+</div>
 <div class="panel panel-primary">
     <div class="panel-heading">RSVPs</div>
     <table id="rsvpTable" class="table table-striped">

@@ -40,6 +40,7 @@ namespace ExampleApp.Infraestructure
         private void AddBindings(IKernel kernel) {
             kernel.Bind<IRepository>().To<Repository>().InSingletonScope();
             //kernel.Bind<IContentNegotiator>().To<CustomNegotiator>();
+            kernel.Bind<IContentNegotiator>().To<DefaultContentNegotiator>().WithConstructorArgument("excludeMatchOnTypeOnly", true);
         }
     }
 }
