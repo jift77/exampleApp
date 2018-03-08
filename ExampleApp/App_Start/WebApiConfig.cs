@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http.Formatting;
+using System.Net.Http.Headers;
 using System.Web.Http;
 using System.Web.Http.Controllers;
 
@@ -55,6 +56,10 @@ namespace ExampleApp
             //config.Formatters.Add(prodFormatter);
 
             //config.ParameterBindingRules.Insert(0, typeof(Numbers), x => x.BindWithAttribute(new FromUriAttribute()));
+
+            //config.ParameterBindingRules.Add(x => typeof(HttpRequestHeaders).GetProperty(x.ParameterName) != null ? new HeaderValueParameterBinding(x) : null);
+
+            config.ParameterBindingRules.Add(x => { return x.ParameterType.IsPrimitive || x.ParameterType == typeof(string) ? new MultiFactoryParameterBinding(x) : null; });
         }
     }
 }

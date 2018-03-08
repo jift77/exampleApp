@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Net.Http.Formatting;
 using System.Web.Http.Dependencies;
+using System.Web.Http.ValueProviders;
 
 namespace ExampleApp.Infraestructure
 {
@@ -41,6 +42,7 @@ namespace ExampleApp.Infraestructure
             kernel.Bind<IRepository>().To<Repository>().InSingletonScope();
             //kernel.Bind<IContentNegotiator>().To<CustomNegotiator>();
             kernel.Bind<IContentNegotiator>().To<DefaultContentNegotiator>().WithConstructorArgument("excludeMatchOnTypeOnly", true);
+            kernel.Bind<ValueProviderFactory>().To<HeaderValueProviderFactory>();
         }
     }
 }
