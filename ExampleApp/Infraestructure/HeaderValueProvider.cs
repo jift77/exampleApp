@@ -1,4 +1,5 @@
 ﻿using System.Globalization;
+using System.Linq;
 using System.Web.Http.ValueProviders;
 
 namespace ExampleApp.Infraestructure
@@ -16,7 +17,7 @@ namespace ExampleApp.Infraestructure
 
         public ValueProviderResult GetValue(string key)
         {
-            string value = headers[key];
+            string value = headers[key.Split('.').Last()];
             return value == null ? null : new ValueProviderResult(value, value, CultureInfo.InvariantCulture);
         }
     }

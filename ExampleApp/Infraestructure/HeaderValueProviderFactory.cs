@@ -12,12 +12,12 @@ namespace ExampleApp.Infraestructure
     {
         public override IValueProvider GetValueProvider(HttpActionContext actionContext)
         {
-            if (actionContext.Request.Method == HttpMethod.Post)
-            {
+            //if (actionContext.Request.Method == HttpMethod.Post)
+            //{
                 return new HeaderValueProvider(new HeadersMap(actionContext.Request.Headers));
-            }
-            else
-                return null;
+            //}
+            //else
+            //    return null;
         }
     }
 }

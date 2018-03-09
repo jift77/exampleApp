@@ -59,7 +59,7 @@ namespace ExampleApp
 
             //config.ParameterBindingRules.Add(x => typeof(HttpRequestHeaders).GetProperty(x.ParameterName) != null ? new HeaderValueParameterBinding(x) : null);
 
-            config.ParameterBindingRules.Add(x => { return x.ParameterType.IsPrimitive || x.ParameterType == typeof(string) ? new MultiFactoryParameterBinding(x) : null; });
+            //config.ParameterBindingRules.Add(x => x.ParameterType.IsPrimitive || x.ParameterType == typeof(string) ? new MultiFactoryParameterBinding(x) : null );
         }
     }
 }

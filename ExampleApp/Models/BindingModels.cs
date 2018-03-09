@@ -7,8 +7,22 @@ namespace ExampleApp.Models
 {
     public class Numbers 
     {
-        public int First { get; set; }
-        public int Second { get; set; }
+        private int first, second;
+        public Numbers(int firstVal, int secondVal)
+        {
+            first = firstVal; second = secondVal;
+        }
+        public int First
+        {
+            get { return first; }
+        }
+        public int Second
+        {
+            get { return second; }
+        }
+
+        public Operation Op { get; set; }
+        public string Accept { get; set; }
     }
 
     public class Operation
