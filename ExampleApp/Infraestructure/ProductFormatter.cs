@@ -63,5 +63,7 @@ namespace ExampleApp.Infraestructure
         {
             return new ProductFormatter(request.GetRouteData().Values["controller"].ToString());
         }
+
+         
     }
 }

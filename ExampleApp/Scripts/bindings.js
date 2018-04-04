@@ -1,16 +1,14 @@
-﻿var viewModel = ko.observable({ first: 2, second: 5, third: 100 });
+﻿var viewModel = ko.observable({
+    first: 2, second: 5, op: { add: true, double: true }
+});
 var response = ko.observable("Ready");
 var gotError = ko.observable(false);
 
 var sendRequest = function (requestType) {
     $.ajax("/api/bindings/sumnumbers", {
-        type: "GET",
-        data: {
-            "numbers.first": viewModel().first,
-            "numbers.second": viewModel().second,
-            "numbers.op.add": viewModel().add,
-            "numbers.op.double": viewModel().double
-        },
+        type: "POST",
+        data: JSON.stringify(viewModel()),
+        contentType: "application/json",
         success: function (data) {
             gotError(false);
             response("Total: " + data);

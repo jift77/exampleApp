@@ -203,11 +203,16 @@
     <Compile Include="Infraestructure\HeaderValueParameterBinding.cs" />
     <Compile Include="Infraestructure\HeaderValueProvider.cs" />
     <Compile Include="Infraestructure\HeaderValueProviderFactory.cs" />
+    <Compile Include="Infraestructure\JsonNumbersFormatter.cs" />
     <Compile Include="Infraestructure\MultiFactoryParameterBinding.cs" />
     <Compile Include="Infraestructure\NinjectResolver.cs" />
     <Compile Include="Infraestructure\NoContentResult.cs" />
+    <Compile Include="Infraestructure\NumbersBinder.cs" />
+    <Compile Include="Infraestructure\NumbersTypeConverter.cs" />
     <Compile Include="Infraestructure\ProductFormatter.cs" />
     <Compile Include="Infraestructure\ProductMediaMapping.cs" />
+    <Compile Include="Infraestructure\UrlNumbersFormatter.cs" />
+    <Compile Include="Infraestructure\XNumbersFormatter.cs" />
     <Compile Include="Models\BindingModels.cs" />
     <Compile Include="Models\IRepository.cs" />
     <Compile Include="Models\Product.cs" />

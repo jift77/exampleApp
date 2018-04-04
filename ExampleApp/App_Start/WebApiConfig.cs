@@ -1,12 +1,10 @@
 ﻿using ExampleApp.Infraestructure;
 using ExampleApp.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http.Formatting;
-using System.Net.Http.Headers;
 using System.Web.Http;
-using System.Web.Http.Controllers;
+using System.Web.Http.ModelBinding;
+using System.Web.Http.ModelBinding.Binders;
+using System.Web.Http.ValueProviders;
+using System.Web.Http.ValueProviders.Providers;
 
 namespace ExampleApp
 {
@@ -60,6 +58,11 @@ namespace ExampleApp
             //config.ParameterBindingRules.Add(x => typeof(HttpRequestHeaders).GetProperty(x.ParameterName) != null ? new HeaderValueParameterBinding(x) : null);
 
             //config.ParameterBindingRules.Add(x => x.ParameterType.IsPrimitive || x.ParameterType == typeof(string) ? new MultiFactoryParameterBinding(x) : null );
+            config.Services.Insert(typeof(ModelBinderProvider), 0, new SimpleModelBinderProvider(typeof(Numbers), new NumbersBinder()));
+            //config.ParameterBindingRules.Add(x => { return x.ParameterType == typeof(Numbers) ? new ModelBinderParameterBinding(x, new NumbersBinder(), new ValueProviderFactory[] { new QueryStringValueProviderFactory(), new HeaderValueProviderFactory() }) : null; });
+            config.Formatters.Add(new XNumbersFormatter());
+            config.Formatters.Insert(0, new UrlNumbersFormatter());
+            config.Formatters.Insert(0, new JsonNumbersFormatter());
         }
     }
 }

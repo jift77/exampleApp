@@ -1,26 +1,24 @@
-﻿using System;
+﻿using ExampleApp.Infraestructure;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Web;
+using System.Web.Http.ModelBinding;
 
 namespace ExampleApp.Models
 {
-    public class Numbers 
+    //[ModelBinder(binderType:typeof(NumbersBinder))]
+    //[TypeConverter(typeof(NumbersTypeConverter))]
+    public class Numbers
     {
-        private int first, second;
-        public Numbers(int firstVal, int secondVal)
+        public Numbers() { /* do nothing */ }
+        public Numbers(int first, int second)
         {
-            first = firstVal; second = secondVal;
+            First = first; Second = second;
         }
-        public int First
-        {
-            get { return first; }
-        }
-        public int Second
-        {
-            get { return second; }
-        }
-
+        public int First { get; set; }
+        public int Second { get; set; }
         public Operation Op { get; set; }
         public string Accept { get; set; }
     }
