@@ -29,6 +29,11 @@ namespace ExampleApp.Controllers
             return new NoContentResult();
         }
 
+        public void Post(Product product)
+        {
+            repo.SaveProduct(product);
+        }
+
         [HttpGet]
         [Route("api/products/noop")]
         public IHttpActionResult NoOp() => Ok();

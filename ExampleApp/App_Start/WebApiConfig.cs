@@ -1,6 +1,7 @@
 ﻿using ExampleApp.Infraestructure;
 using ExampleApp.Models;
 using System.Web.Http;
+using System.Web.Http.Controllers;
 using System.Web.Http.ModelBinding;
 using System.Web.Http.ModelBinding.Binders;
 using System.Web.Http.ValueProviders;
@@ -63,6 +64,9 @@ namespace ExampleApp
             config.Formatters.Add(new XNumbersFormatter());
             config.Formatters.Insert(0, new UrlNumbersFormatter());
             config.Formatters.Insert(0, new JsonNumbersFormatter());
+
+            //config.Services.Replace(typeof(IActionValueBinder), new CustomActionValueBinder);
+
         }
     }
 }

@@ -171,6 +171,7 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Scripts\validation.js" />
     <Content Include="Web.config" />
     <Content Include="Scripts\umd\popper.min.js.map" />
     <Content Include="Scripts\umd\popper.js.map" />
@@ -197,6 +198,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infraestructure\CustomActionValueBinder.cs" />
     <Compile Include="Infraestructure\CustomNegotiator.cs" />
     <Compile Include="Infraestructure\FromHeaderAttribute.cs" />
     <Compile Include="Infraestructure\HeadersMap.cs" />
@@ -227,6 +229,7 @@
     <Content Include="Views\Formatters\Index.cshtml" />
     <Content Include="Views\Home\Formats.cshtml" />
     <Content Include="Views\Home\Bindings.cshtml" />
+    <Content Include="Views\Home\Validation.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

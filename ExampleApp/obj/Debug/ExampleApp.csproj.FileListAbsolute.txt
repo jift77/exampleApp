@@ -46,3 +46,4 @@ C:\Users\georg\source\repos\exampleApp\ExampleApp\bin\Ninject.xml
 C:\Users\georg\source\repos\exampleApp\ExampleApp\bin\Ninject.Extensions.ChildKernel.xml
 C:\Users\georg\source\repos\exampleApp\ExampleApp\bin\Ninject.Web.Common.xml
 C:\Users\georg\source\repos\exampleApp\ExampleApp\bin\Ninject.Web.Mvc.xml
+C:\Users\georg\source\repos\exampleApp\ExampleApp\obj\Debug\ExampleApp.csproj.CopyComplete
